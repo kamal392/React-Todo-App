@@ -1,0 +1,24 @@
+/* add style to the header  */
+h1 {
+  font-weight: 700;
+  font-size: 45px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+/* giving complete 100 width of div container parent container to input element  */
+input {
+  width: 100%;
+}
+/* moves all the text to the left inside all rows */
+.items-container {
+  text-align: left;
+}
+/* add class to the row to align them nicely*/
+.kg-row {
+  margin: 10px 5px;
+}
+/* add class to the buttons to have them same style */
+.kg-button {
+  min-width: 80px;
+}
