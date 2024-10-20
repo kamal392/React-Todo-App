@@ -1,8 +1,4 @@
-function TodoItem1() {
-  //  declare variables
-  let todoName = "Buy Html course";
-  let todoDate = "10/16/2024";
-
+function TodoItem({ todoName, todoDate }) {
   return (
     // add bootstrap grid
     <div class="container">
@@ -18,4 +14,4 @@ function TodoItem1() {
     </div>
   );
 }
-export default TodoItem1;
+export default TodoItem;
