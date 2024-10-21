@@ -1,0 +1,4 @@
+/* moves all the text to the left inside all rows */
+.itemsContainer {
+  text-align: left;
+}

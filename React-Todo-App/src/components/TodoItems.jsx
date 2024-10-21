@@ -1,8 +1,10 @@
+import styles from "./TodoItems.module.css";
+
 // import TodoItem to use it in map method.
 import TodoItem from "./TodoItem";
 const TodoItems = ({ todoItems }) => {
   return (
-    <div className="items-container">
+    <div className={styles.itemsContainer}>
       {todoItems.map((item) => {
         return (
           // passing data to TodoItem using prop
