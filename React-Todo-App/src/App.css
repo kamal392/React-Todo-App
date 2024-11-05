@@ -16,3 +16,8 @@ input {
 .container {
   text-align: left;
 }
+.todo-container {
+  border: 2px solid black;
+  width: 600px;
+  margin: auto;
+}

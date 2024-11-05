@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function AddTodo({ displayToDoItems }) {
-  let [taskName, setTaskName] = useState();
-  let [taskDueDate, setTaskDueDate] = useState();
+  let [taskName, setTaskName] = useState("");
+  let [taskDueDate, setTaskDueDate] = useState("");
 
   let handleInputChange = (event) => {
     setTaskName(event.target.value);
@@ -11,7 +11,7 @@ function AddTodo({ displayToDoItems }) {
   let handleDateChange = (event) => {
     setTaskDueDate(event.target.value);
   };
-
+  // on click on add button calls handleAddButtonClick function which is calling displayToDoItems function
   let handleAddButtonClick = () => {
     displayToDoItems(taskName, taskDueDate);
     setTaskName("");
