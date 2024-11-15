@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { MdAddTask } from "react-icons/md";
 function AddTodo({ displayToDoItems }) {
   let [taskName, setTaskName] = useState("");
   let [taskDueDate, setTaskDueDate] = useState("");
@@ -12,7 +12,8 @@ function AddTodo({ displayToDoItems }) {
     setTaskDueDate(event.target.value);
   };
   // on click on add button calls handleAddButtonClick function which is calling displayToDoItems function
-  let handleAddButtonClick = () => {
+  let handleAddButtonClick = (event) => {
+    event.preventDefault();
     displayToDoItems(taskName, taskDueDate);
     setTaskName("");
     setTaskDueDate("");
@@ -20,7 +21,7 @@ function AddTodo({ displayToDoItems }) {
   return (
     // add bootstrap grid layout
     <div className="container">
-      <div className="row kg-row">
+      <form className="row kg-row" onSubmit={handleAddButtonClick}>
         <div className="col-6">
           <input
             type="text"
@@ -33,17 +34,11 @@ function AddTodo({ displayToDoItems }) {
           <input type="date" value={taskDueDate} onChange={handleDateChange} />
         </div>
         <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-success kg-button"
-            onClick={() => {
-              handleAddButtonClick();
-            }}
-          >
-            Add
+          <button className="btn btn-success kg-button">
+            <MdAddTask />
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

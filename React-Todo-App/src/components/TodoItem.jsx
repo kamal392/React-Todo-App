@@ -1,3 +1,4 @@
+import { AiFillDelete } from "react-icons/ai";
 function TodoItem({ todoName, todoDate, handleDeleteButton }) {
   return (
     // add bootstrap grid
@@ -13,7 +14,7 @@ function TodoItem({ todoName, todoDate, handleDeleteButton }) {
               handleDeleteButton(todoName);
             }}
           >
-            Delete
+            <AiFillDelete />
           </button>
         </div>
       </div>
