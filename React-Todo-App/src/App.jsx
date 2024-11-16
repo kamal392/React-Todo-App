@@ -6,17 +6,19 @@ import WelcomeMessage from "./components/WelcomeMessage";
 import { useState } from "react";
 function App() {
   // states for the app
-  let [todoItems, setTodoItems] = useState([]);
+  const [todoItems, setTodoItems] = useState([]);
   //function to display items
-  let displayToDoItems = (taskName, taskDueDate) => {
-    const newTodoItems = [
-      ...todoItems,
-      {
-        name: taskName,
-        dueDate: taskDueDate,
-      },
-    ];
-    setTodoItems(newTodoItems);
+  const displayToDoItems = (taskName, taskDueDate) => {
+    setTodoItems((currentValue) => {
+      const newTodoItems = [
+        ...currentValue,
+        {
+          name: taskName,
+          dueDate: taskDueDate,
+        },
+      ];
+      return newTodoItems;
+    });
   };
   // handle delete button function.
   const handleDeleteButton = (todoName) => {
