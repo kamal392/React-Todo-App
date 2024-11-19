@@ -1,11 +1,15 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { MdAddTask } from "react-icons/md";
-function AddTodo({ displayToDoItems }) {
+import { TodoItemsContext } from "../store/todo-items-store";
+function AddTodo() {
   // let [taskName, setTaskName] = useState("");
   // let [taskDueDate, setTaskDueDate] = useState("");
-
+  // here we have replaced useState hook with useRef()
   let toDoNameElement = useRef();
   let dueDateElement = useRef();
+  // using useContext to get data from global storage
+  const contextObj = useContext(TodoItemsContext);
+  const addNewItem = contextObj.addNewItem;
 
   // on click on add button calls handleAddButtonClick function which is calling displayToDoItems function
   let handleAddButtonClick = (event) => {
@@ -14,7 +18,7 @@ function AddTodo({ displayToDoItems }) {
     const dueDate = dueDateElement.current.value;
     toDoNameElement.current.value = "";
     dueDateElement.current.value = "";
-    displayToDoItems(todoName, dueDate);
+    addNewItem(todoName, dueDate);
   };
   return (
     // add bootstrap grid layout

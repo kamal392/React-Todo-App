@@ -1,5 +1,8 @@
 import { AiFillDelete } from "react-icons/ai";
-function TodoItem({ todoName, todoDate, handleDeleteButton }) {
+import { TodoItemsContext } from "../store/todo-items-store";
+import { useContext } from "react";
+function TodoItem({ todoName, todoDate }) {
+  const { deleteItem } = useContext(TodoItemsContext);
   return (
     // add bootstrap grid
     <div className="container">
@@ -11,7 +14,7 @@ function TodoItem({ todoName, todoDate, handleDeleteButton }) {
             type="button"
             className="btn btn-danger kg-button"
             onClick={() => {
-              handleDeleteButton(todoName);
+              deleteItem(todoName);
             }}
           >
             <AiFillDelete />
